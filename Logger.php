@@ -6,7 +6,7 @@
  * @author Leonard Shtika <leonard@shtika.info>
  * @link http://leonard.shtika.info
  * @copyright (C) 2014 Leonard Shtika
- * @license MIT. See the file LICENSE.txt for copying permission.
+ * @license MIT. See the file LICENSE for copying permission.
  * 
  * The add() method takes 2 optional arguments
  * Example: Logger::add('Your message', Logger::LEVEL_WARNING);
