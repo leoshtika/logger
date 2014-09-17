@@ -1,5 +1,3 @@
-# Netbeans
 /nbproject/
-
-# Composer
 /vendor/
+/logfiles/
