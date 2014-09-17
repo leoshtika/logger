@@ -14,7 +14,7 @@
 class Logger 
 {
 	// Path where the logfile will be saved  
-	const LOGFILE_PATH = '../logfiles/';
+	const LOGFILE_PATH = 'logfiles/';
 	
 	// level codes for logs
 	const LEVEL_INFO			= 'INFO';
