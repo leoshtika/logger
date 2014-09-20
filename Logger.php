@@ -1,27 +1,36 @@
 <?php
-
 /**
- * Logger class file
- * 
  * @author Leonard Shtika <leonard@shtika.info>
  * @link http://leonard.shtika.info
  * @copyright (C) 2014 Leonard Shtika
- * @license MIT. See the file LICENSE for copying permission.
- * 
+ * @license MIT. See the file LICENSE for copying permission. 
+ */
+
+namespace leoshtika\libs;
+
+/**
+ * Logger class file
  * The add() method takes 2 optional arguments
- * Example: Logger::add('Your message', Logger::LEVEL_WARNING);
+ * 
+ * How to use:
+ * require_once 'Logger.php';
+ * use leoshtika\libs\Logger;
+ * Logger::add('Your message', Logger::LEVEL_WARNING);
  */
 class Logger 
 {
-	// Path where the logfile will be saved  
+	// Path where the logfile will be saved. Change this if needed
 	const LOGFILE_PATH = 'logfiles/';
 	
-	// level codes for logs
-	const LEVEL_INFO			= 'INFO';
-	const LEVEL_PROFILE			= 'PROFILE';
-	const LEVEL_WARNING			= 'WARNING';
-	const LEVEL_ERROR			= 'ERROR';
-	const LEVEL_ATTEMPT_TO_HACK = 'ATTEMPT_TO_HACK';
+	// Level codes for logs
+	const LEVEL_EMERGENCY   = 'EMERGENCY';
+	const LEVEL_ALERT       = 'ALERT';
+	const LEVEL_CRITICAL    = 'CRITICAL';
+	const LEVEL_ERROR       = 'ERROR';
+	const LEVEL_WARNING     = 'WARNING';
+	const LEVEL_NOTICE      = 'NOTICE';
+	const LEVEL_INFO        = 'INFO';
+	const LEVEL_DEBUG       = 'DEBUG';
     
 	// File handler  
 	private static $_fileHandler = null;
@@ -50,7 +59,7 @@ class Logger
 		$scriptName = pathinfo($_SERVER['PHP_SELF'], PATHINFO_BASENAME);
 		
 		// write message to the log file  
-		fwrite(self::$_fileHandler, "$userIP [$time] ($scriptName) -- $logCode --> $message\n");
+		fwrite(self::$_fileHandler, "$userIP [$time][$logCode] ($scriptName) --> $message\n");
 	}
 	
 	

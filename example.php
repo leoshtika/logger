@@ -1,5 +1,6 @@
 <?php
 
 require_once 'Logger.php';
+use leoshtika\libs\Logger;
 
-Logger::add();
+Logger::add('Your message', Logger::LEVEL_WARNING);
