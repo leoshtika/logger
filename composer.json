@@ -1,0 +1,16 @@
+{
+    "name": "leoshtika/logger",
+    "description": "A simple PHP Logger class",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3.0"
+    },
+    "authors": [
+        {
+            "name": "Leonard Shtika",
+            "email": "leonard@shtika.info",
+            "homepage": "http://leonard.shtika.info",
+            "role": "Developer"
+        }
+    ]
+}
