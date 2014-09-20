@@ -1,5 +1,6 @@
 {
     "name": "leoshtika/logger",
+    "version": "1.0.0",
     "description": "A simple PHP Logger class",
     "license": "MIT",
     "require": {
