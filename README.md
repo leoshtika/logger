@@ -49,7 +49,7 @@ Logger::add('Action must be taken immediately', Logger::LEVEL_EMERGENCY);
 Logger::add('Interesting events', Logger::LEVEL_NOTICE);
 ```
 
-#### 2) Using the downloaded folder
+#### Using the downloaded folder
 If you donwloaded the folder manually then be sure to require the 'Logger.php' class
 ```php
 <?php
