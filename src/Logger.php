@@ -19,8 +19,8 @@ namespace leoshtika\libs;
  */
 class Logger 
 {
-	// Path where the logfile will be saved. Change this if needed
-	const LOGFILE_PATH = 'logfiles/';
+	// Path where the logfile will be saved.
+	const LOGS_FOLDER_PATH = 'logfiles/';
 	
 	// Level codes for logs
 	const LEVEL_EMERGENCY   = 'EMERGENCY';
@@ -36,7 +36,7 @@ class Logger
 	private static $_fileHandler = null;
 	
 	
-	/**
+    /**
 	 * Write message to the log file
 	 * @param string $message Optional message
 	 * @param string $logCode Optional log code (example: INFO (default), ERROR, ATTEMPT TO HACK, ...)
@@ -60,6 +60,7 @@ class Logger
 		
 		// write message to the log file  
 		fwrite(self::$_fileHandler, "$userIP [$time][$logCode] ($scriptName) --> $message\n");
+        fclose(self::$_fileHandler);
 	}
 	
 	
@@ -70,12 +71,31 @@ class Logger
 	{
 		// define the current date (it will be appended to the log file name)  
 		$month = date('Y-m');
-		
-		// define log file path and name  
-		$logFile = self::LOGFILE_PATH.'all.log_'.$month;
+        
+        self::_crateLogsFolder();
+
+        // define log file path and name  
+		$logFile = self::LOGS_FOLDER_PATH.$month.'.log';
 		
 		// open log file for writing only; place the file pointer at the end of the file  
 		// if the file does not exist, attempt to create it  
 		self::$_fileHandler = fopen($logFile, 'a') or exit("Can't open $logFile!");
 	}
+    
+    
+    /**
+     * Create LogsFolder if not exist
+     * This method will create a .htaccess to deny access to logfiles
+     */
+    private static function _crateLogsFolder()
+    {
+        // If folder doesn't exist attempt to create it
+        if (!file_exists(self::LOGS_FOLDER_PATH))
+        {
+            mkdir(self::LOGS_FOLDER_PATH, 0755, true);
+            $htaccessHandler = fopen(self::LOGS_FOLDER_PATH.'.htaccess', 'w');
+            fwrite($htaccessHandler, 'deny from all');
+            fclose($htaccessHandler);
+        } 
+    }
 }
