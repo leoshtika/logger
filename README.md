@@ -37,6 +37,7 @@ https://github.com/leoshtika/logger/archive/master.zip
 ## Usage
 
 #### Using Composer
+If you are using composer require the 'vendor/autoload.php' file
 ```php
 <?php
 require 'vendor/autoload.php';
@@ -48,7 +49,8 @@ Logger::add('Action must be taken immediately', Logger::LEVEL_EMERGENCY);
 Logger::add('Interesting events', Logger::LEVEL_NOTICE);
 ```
 
-#### Using the downloaded folder
+#### 2) Using the downloaded folder
+If you donwloaded the folder manually then be sure to require the 'Logger.php' class
 ```php
 <?php
 require 'path/to/logger/src/Logger.php';
@@ -60,9 +62,12 @@ Logger::add('Action must be taken immediately', Logger::LEVEL_EMERGENCY);
 Logger::add('Interesting events', Logger::LEVEL_NOTICE);
 ```
 
+
 ## Output
 ```
 ::1 [21/Sep/2014 12:42:41][INFO] (example.php) --> no message
 ::1 [21/Sep/2014 12:42:41][EMERGENCY] (example.php) --> Action must be taken immediately
 ::1 [21/Sep/2014 12:42:41][NOTICE] (example.php) --> Interesting events
 ```
+
+Enjoy!
