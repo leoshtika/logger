@@ -60,7 +60,6 @@ class Logger
 		
 		// write message to the log file  
 		fwrite(self::$_fileHandler, "$userIP [$time][$logCode] ($scriptName) --> $message\n");
-        fclose(self::$_fileHandler);
 	}
 	
 	
