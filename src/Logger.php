@@ -51,7 +51,11 @@ class Logger
         }
 
         // Get user IP
-        $userIP = $_SERVER['REMOTE_ADDR'];
+        if (!empty($_SERVER['REMOTE_ADDR'])) {
+            $userIP = $_SERVER['REMOTE_ADDR'];
+        } else {
+            $userIP = '0.0.0.0';
+        }
 
         // define current time  
         $time = date('j/M/Y H:i:s');
@@ -59,8 +63,14 @@ class Logger
         // define script name  
         $scriptName = pathinfo($_SERVER['PHP_SELF'], PATHINFO_BASENAME);
 
-        // write message to the log file  
-        fwrite(self::$_fileHandler, "$userIP [$time][$logCode] ($scriptName) --> $message\n");
+        // write message to the log file
+        $fwrite = fwrite(self::$_fileHandler, "$userIP [$time][$logCode] ($scriptName) --> $message\n");
+        
+        if ($fwrite === false) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
 
