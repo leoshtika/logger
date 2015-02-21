@@ -1,5 +1,7 @@
 <?php
 
+require_once 'src/Logger.php';
+
 use leoshtika\libs\Logger;
 
 class LoggerTest extends PHPUnit_Framework_TestCase
