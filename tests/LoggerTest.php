@@ -9,7 +9,7 @@ class LoggerTest extends PHPUnit_Framework_TestCase
     /**
      * Test if add method returns true
      */
-    public function testAdd()
+    public function testAddMethodReturnsTrue()
     {
         $this->assertTrue(Logger::add('Test from PHPUnit', Logger::LEVEL_DEBUG));
     }
