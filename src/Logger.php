@@ -1,9 +1,11 @@
 <?php
 
 /**
+ * Logger: The simplest PHP Logger class
+ * 
  * @author Leonard Shtika <leonard@shtika.info>
  * @link http://leonard.shtika.info
- * @copyright (C) 2014 Leonard Shtika
+ * @copyright (C) Leonard Shtika
  * @license MIT. See the file LICENSE for copying permission. 
  */
 
@@ -11,12 +13,12 @@ namespace leoshtika\libs;
 
 /**
  * Logger class file
- * The add() method takes 2 optional arguments
  * 
  * How to use:
- * require_once 'Logger.php';
- * use leoshtika\libs\Logger;
- * Logger::add('Your message', Logger::LEVEL_WARNING);
+ *   require_once 'vendor/autoload.php';
+ *      // if you don't use composer require_once 'src/Logger.php';
+ *   use leoshtika\libs\Logger;
+ *   Logger::add('Your message', Logger::LEVEL_WARNING);
  */
 class Logger
 {
@@ -45,8 +47,7 @@ class Logger
     public static function add($message = 'No message', $logCode = self::LEVEL_INFO)
     {
         // if file pointer doesn't exist, then open log file  
-        if (!self::$_fileHandler)
-        {
+        if (!self::$_fileHandler) {
             self::_openLogFile();
         }
 
@@ -100,8 +101,7 @@ class Logger
     private static function _crateLogsFolder()
     {
         // If folder doesn't exist attempt to create it
-        if (!file_exists(self::LOGS_FOLDER_PATH))
-        {
+        if (!file_exists(self::LOGS_FOLDER_PATH)) {
             mkdir(self::LOGS_FOLDER_PATH, 0755, true);
             $htaccessHandler = fopen(self::LOGS_FOLDER_PATH . '.htaccess', 'w');
             fwrite($htaccessHandler, 'deny from all');
