@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <phpunit    
     bootstrap="vendor/autoload.php"
-    color="true"
-    converErrorsToExceptions="true"
-    converNoticesToExceptions="true"
-    converWarningsToExceptions="true"
-    stopOnFailures="false"
-    syntaxCheck="false">
+    color="true">
     <testsuites>
         <testsuite name="Logger Application">
             <directory>tests</directory>
