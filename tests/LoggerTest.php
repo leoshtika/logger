@@ -1,6 +1,6 @@
 <?php
 
-require_once 'src/Logger.php';
+//require_once 'src/Logger.php';
 
 use leoshtika\libs\Logger;
 
