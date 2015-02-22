@@ -2,15 +2,10 @@
 
 /**
  * The following example demonstrates how to use the Logger class
- * 
- * PHPUnit
- * Run it from the logger folder
- * $ phpunit tests
  */
 
-// Uncomment the following line if you are using composer and comment the other one
-// require_once 'vendor/autoload.php';
-require_once 'src/Logger.php';
+require_once 'vendor/autoload.php';
+// if you don't use composer require_once 'src/Logger.php';
 
 use leoshtika\libs\Logger;
 
