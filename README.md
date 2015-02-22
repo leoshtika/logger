@@ -10,17 +10,17 @@ When using this library for the first time, it will create a "logfiles" folder i
 ## Installation
 You can use one of these 3 installation methods
 
-#### 1) Using Composer
+#### 1) Using Composer (recommended)
 - Using Composer from the command line
 ```
-composer require leoshtika/logger:1.0.*
+composer require leoshtika/logger:~1.0
 ```
 
 - Or using Composer with composer.json file
 ```
 {
     "require": {
-        "leoshtika/logger": "1.0.*"
+        "leoshtika/logger": "~1.0"
     }
 }
 ```
