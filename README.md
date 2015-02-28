@@ -3,6 +3,7 @@ A simple PHP Logger class
 When using this library for the first time, it will create a "logfiles" folder in the root of your project, where all your log files will be placed, in different files for each month.
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](http://opensource.org/licenses/MIT)
+[![Packagist](https://img.shields.io/badge/packagist-download-orange.svg)](https://packagist.org/packages/leoshtika/logger)
 
 ## Requirements
 - PHP 5.3 or higher
